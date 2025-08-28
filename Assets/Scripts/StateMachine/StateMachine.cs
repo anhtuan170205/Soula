@@ -9,7 +9,7 @@ public class StateMachine : MonoBehaviour
         m_currentState?.Tick(Time.deltaTime);
     }
 
-    private void SwitchState(State newState)
+    public void SwitchState(State newState)
     {
         m_currentState?.Exit();
         m_currentState = newState;
