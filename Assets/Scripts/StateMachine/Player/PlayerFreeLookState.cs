@@ -8,8 +8,9 @@ public class PlayerFreeLookState : PlayerBaseState
 
     public override void Enter()
     {
-
+        m_stateMachine.InputReader.TargetEvent += OnTarget;
     }
+
 
     public override void Tick(float deltaTime)
     {
@@ -28,7 +29,12 @@ public class PlayerFreeLookState : PlayerBaseState
 
     public override void Exit()
     {
+        m_stateMachine.InputReader.TargetEvent -= OnTarget;
+    }
 
+    private void OnTarget()
+    {
+        m_stateMachine.SwitchState(new PlayerTargetState(m_stateMachine));
     }
 
     private Vector3 CalculateMovement()

@@ -1,8 +1,9 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class Targeter : MonoBehaviour
 {
-    private List<Targe> m_targets = new List<Targe>();
+    private List<Target> m_targets = new List<Target>();
 
     private void OnTriggerEnter(Collider other)
     {
