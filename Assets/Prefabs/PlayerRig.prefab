@@ -323,9 +323,6 @@ MonoBehaviour:
   - Object: {fileID: 7686208193278632650}
     Weight: 0.5
     Radius: 2
-  - Object: {fileID: 0}
-    Weight: 1
-    Radius: 2
   m_LegacyTargets: []
 --- !u!1 &8399866803819136331
 GameObject:
@@ -643,6 +640,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1723142119567756347, guid: b2a67e2311d0d4d2fa14e1a2b64e2eca, type: 3}
+      propertyPath: m_targetGroup
+      value: 
+      objectReference: {fileID: 1222060543953445179}
     - target: {fileID: 5278935766977295100, guid: b2a67e2311d0d4d2fa14e1a2b64e2eca, type: 3}
       propertyPath: m_Name
       value: Player
