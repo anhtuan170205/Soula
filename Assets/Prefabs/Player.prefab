@@ -1349,9 +1349,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1159370897167481055}
   - component: {fileID: 292775103247505100}
+  - component: {fileID: 4827566762254739412}
   - component: {fileID: 7307285823971467582}
   - component: {fileID: 7308510575246132951}
-  - component: {fileID: 4827566762254739412}
+  - component: {fileID: 7322494399240832751}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1406,36 +1407,6 @@ CharacterController:
   m_SkinWidth: 0.025
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: 0.875, z: 0}
---- !u!114 &7307285823971467582
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5278935766977295100}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a610b12612ee14160b508af9f6a7d205, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <InputReader>k__BackingField: {fileID: 7308510575246132951}
-  <Controller>k__BackingField: {fileID: 292775103247505100}
-  <Animator>k__BackingField: {fileID: 4827566762254739412}
-  <Targeter>k__BackingField: {fileID: 1723142119567756347}
-  <FreeLookMoveSpeed>k__BackingField: 6
-  <RotationDamping>k__BackingField: 10
---- !u!114 &7308510575246132951
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5278935766977295100}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 530182185cc0645e09ebf9f785dadfa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &4827566762254739412
 Animator:
   serializedVersion: 7
@@ -1458,6 +1429,50 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7307285823971467582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5278935766977295100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a610b12612ee14160b508af9f6a7d205, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <InputReader>k__BackingField: {fileID: 7308510575246132951}
+  <Controller>k__BackingField: {fileID: 292775103247505100}
+  <Animator>k__BackingField: {fileID: 4827566762254739412}
+  <Targeter>k__BackingField: {fileID: 1723142119567756347}
+  <ForceReceiver>k__BackingField: {fileID: 7322494399240832751}
+  <FreeLookMoveSpeed>k__BackingField: 6
+  <RotationDamping>k__BackingField: 10
+--- !u!114 &7308510575246132951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5278935766977295100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 530182185cc0645e09ebf9f785dadfa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7322494399240832751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5278935766977295100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b496b31928a45ee83d1007013efc06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_controller: {fileID: 292775103247505100}
 --- !u!1 &5300644503072432857
 GameObject:
   m_ObjectHideFlags: 0
@@ -2269,7 +2284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fb29c0e3989941ca93dfe898681ec5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_targets: []
+  m_targetGroup: {fileID: 0}
 --- !u!135 &8673123951556768415
 SphereCollider:
   m_ObjectHideFlags: 0
