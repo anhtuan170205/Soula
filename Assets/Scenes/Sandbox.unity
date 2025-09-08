@@ -1760,10 +1760,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerRig
       objectReference: {fileID: 0}
-    - target: {fileID: 1222060543953445179, guid: edcb69e217a9b4952a4103438d345e79, type: 3}
-      propertyPath: Targets.Array.data[1].Object
-      value: 
-      objectReference: {fileID: 805230287}
     - target: {fileID: 5660121067687329627, guid: edcb69e217a9b4952a4103438d345e79, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1803,6 +1799,10 @@ PrefabInstance:
     - target: {fileID: 5660121067687329627, guid: edcb69e217a9b4952a4103438d345e79, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8087715114220671379, guid: edcb69e217a9b4952a4103438d345e79, type: 3}
+      propertyPath: m_Radius
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
