@@ -17,11 +17,16 @@ public class PlayerTargetState : PlayerBaseState
 
     public override void Tick(float deltaTime)
     {
-        if (m_stateMachine.Targeter.CurrentTarget == null)
+        if (m_stateMachine.InputReader.IsAttacking)
         {
-            m_stateMachine.SwitchState(new PlayerFreeLookState(m_stateMachine));
+            m_stateMachine.SwitchState(new PlayerAttackState(m_stateMachine));
             return;
         }
+        if (m_stateMachine.Targeter.CurrentTarget == null)
+            {
+                m_stateMachine.SwitchState(new PlayerFreeLookState(m_stateMachine));
+                return;
+            }
         Vector3 movement = CalculateMovement();
 
         Move(movement * m_stateMachine.TargetMoveSpeed, deltaTime);

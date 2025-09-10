@@ -16,6 +16,11 @@ public class PlayerFreeLookState : PlayerBaseState
 
     public override void Tick(float deltaTime)
     {
+        if (m_stateMachine.InputReader.IsAttacking)
+        {
+            m_stateMachine.SwitchState(new PlayerAttackState(m_stateMachine));
+            return;
+        }
         if (m_stateMachine.InputReader.MovementValue == Vector2.zero)
         {
             m_stateMachine.Animator.SetFloat(FreeLookSpeedHash, 0, AnimatorDampTime, deltaTime);
