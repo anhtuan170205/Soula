@@ -19,7 +19,7 @@ public class PlayerTargetState : PlayerBaseState
     {
         if (m_stateMachine.InputReader.IsAttacking)
         {
-            m_stateMachine.SwitchState(new PlayerAttackState(m_stateMachine));
+            m_stateMachine.SwitchState(new PlayerAttackState(m_stateMachine, 0));
             return;
         }
         if (m_stateMachine.Targeter.CurrentTarget == null)
