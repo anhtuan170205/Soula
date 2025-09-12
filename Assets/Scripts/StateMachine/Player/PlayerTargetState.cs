@@ -6,13 +6,14 @@ public class PlayerTargetState : PlayerBaseState
     private readonly int TARGET_FORWARD_HASH = Animator.StringToHash("TargetForward");
     private readonly int TARGET_RIGHT_HASH = Animator.StringToHash("TargetRight");
     private const float ANIMATOR_DAMP_TIME = 0.1f;
+    private const float CROSS_FADE_DURATION = 0.1f;
 
     public PlayerTargetState(PlayerStateMachine stateMachine) : base(stateMachine) { }
 
     public override void Enter()
     {
         m_stateMachine.InputReader.CancelEvent += OnCancel;
-        m_stateMachine.Animator.Play(TARGET_BLEND_TREE_HASH);
+        m_stateMachine.Animator.CrossFadeInFixedTime(TARGET_BLEND_TREE_HASH, CROSS_FADE_DURATION);
     }
 
     public override void Tick(float deltaTime)
@@ -23,10 +24,10 @@ public class PlayerTargetState : PlayerBaseState
             return;
         }
         if (m_stateMachine.Targeter.CurrentTarget == null)
-            {
-                m_stateMachine.SwitchState(new PlayerFreeLookState(m_stateMachine));
-                return;
-            }
+        {
+            m_stateMachine.SwitchState(new PlayerFreeLookState(m_stateMachine));
+            return;
+        }
         Vector3 movement = CalculateMovement();
 
         Move(movement * m_stateMachine.TargetMoveSpeed, deltaTime);

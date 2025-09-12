@@ -5,12 +5,13 @@ public class PlayerFreeLookState : PlayerBaseState
     private readonly int FREE_LOOK_BLEND_TREE_HASH = Animator.StringToHash("FreeLookBlendTree");
     private readonly int FREE_LOOK_SPEED_HASH = Animator.StringToHash("FreeLookSpeed");
     private const float ANIMATOR_DAMP_TIME = 0.1f;
+    private const float CROSS_FADE_DURATION = 0.1f;
     public PlayerFreeLookState(PlayerStateMachine stateMachine) : base(stateMachine) { }
 
     public override void Enter()
     {
         m_stateMachine.InputReader.TargetEvent += OnTarget;
-        m_stateMachine.Animator.Play(FREE_LOOK_BLEND_TREE_HASH);
+        m_stateMachine.Animator.CrossFadeInFixedTime(FREE_LOOK_BLEND_TREE_HASH, CROSS_FADE_DURATION);
     }
 
 
