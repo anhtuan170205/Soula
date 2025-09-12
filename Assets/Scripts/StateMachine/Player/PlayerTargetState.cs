@@ -2,17 +2,17 @@ using UnityEngine;
 
 public class PlayerTargetState : PlayerBaseState
 {
-    private readonly int TargetBlendTreeHash = Animator.StringToHash("TargetBlendTree");
-    private readonly int TargetForwardHash = Animator.StringToHash("TargetForward");
-    private readonly int TargetRightHash = Animator.StringToHash("TargetRight");
-    private const float AnimatorDampTime = 0.1f;
+    private readonly int TARGET_BLEND_TREE_HASH = Animator.StringToHash("TargetBlendTree");
+    private readonly int TARGET_FORWARD_HASH = Animator.StringToHash("TargetForward");
+    private readonly int TARGET_RIGHT_HASH = Animator.StringToHash("TargetRight");
+    private const float ANIMATOR_DAMP_TIME = 0.1f;
 
     public PlayerTargetState(PlayerStateMachine stateMachine) : base(stateMachine) { }
 
     public override void Enter()
     {
         m_stateMachine.InputReader.CancelEvent += OnCancel;
-        m_stateMachine.Animator.Play(TargetBlendTreeHash);
+        m_stateMachine.Animator.Play(TARGET_BLEND_TREE_HASH);
     }
 
     public override void Tick(float deltaTime)
@@ -68,8 +68,8 @@ public class PlayerTargetState : PlayerBaseState
 
     public void UpdateAnimator(float deltaTime)
     {
-        UpdateAnimatorValue(TargetForwardHash, m_stateMachine.InputReader.MovementValue.y, AnimatorDampTime, deltaTime);
-        UpdateAnimatorValue(TargetRightHash,   m_stateMachine.InputReader.MovementValue.x, AnimatorDampTime, deltaTime);
+        UpdateAnimatorValue(TARGET_FORWARD_HASH, m_stateMachine.InputReader.MovementValue.y, ANIMATOR_DAMP_TIME, deltaTime);
+        UpdateAnimatorValue(TARGET_RIGHT_HASH,   m_stateMachine.InputReader.MovementValue.x, ANIMATOR_DAMP_TIME, deltaTime);
     }
 
 }

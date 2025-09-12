@@ -2,15 +2,15 @@ using UnityEngine;
 
 public class PlayerFreeLookState : PlayerBaseState
 {
-    private readonly int FreeLookBlendTreeHash = Animator.StringToHash("FreeLookBlendTree");
-    private readonly int FreeLookSpeedHash = Animator.StringToHash("FreeLookSpeed");
-    private const float AnimatorDampTime = 0.1f;
+    private readonly int FREE_LOOK_BLEND_TREE_HASH = Animator.StringToHash("FreeLookBlendTree");
+    private readonly int FREE_LOOK_SPEED_HASH = Animator.StringToHash("FreeLookSpeed");
+    private const float ANIMATOR_DAMP_TIME = 0.1f;
     public PlayerFreeLookState(PlayerStateMachine stateMachine) : base(stateMachine) { }
 
     public override void Enter()
     {
         m_stateMachine.InputReader.TargetEvent += OnTarget;
-        m_stateMachine.Animator.Play(FreeLookBlendTreeHash);
+        m_stateMachine.Animator.Play(FREE_LOOK_BLEND_TREE_HASH);
     }
 
 
@@ -23,11 +23,11 @@ public class PlayerFreeLookState : PlayerBaseState
         }
         if (m_stateMachine.InputReader.MovementValue == Vector2.zero)
         {
-            m_stateMachine.Animator.SetFloat(FreeLookSpeedHash, 0, AnimatorDampTime, deltaTime);
+            m_stateMachine.Animator.SetFloat(FREE_LOOK_SPEED_HASH, 0, ANIMATOR_DAMP_TIME, deltaTime);
             return;
         }
 
-        m_stateMachine.Animator.SetFloat(FreeLookSpeedHash, 1, AnimatorDampTime, deltaTime);
+        m_stateMachine.Animator.SetFloat(FREE_LOOK_SPEED_HASH, 1, ANIMATOR_DAMP_TIME, deltaTime);
         Vector3 movement = CalculateMovement();
 
         Move(movement * m_stateMachine.FreeLookMoveSpeed, deltaTime);
