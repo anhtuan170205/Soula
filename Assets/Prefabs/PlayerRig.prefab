@@ -353,8 +353,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8399866803819136331}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.13633336, y: 0.0353229, z: -0.003834509, w: 0.9900257}
-  m_LocalPosition: {x: -0.39314732, y: -0.7808763, z: 0.86603284}
+  m_LocalRotation: {x: 0.061887093, y: -0.000000029284104, z: 0.000000009280679, w: 0.99808323}
+  m_LocalPosition: {x: 0.00000035618766, y: 1.48051, z: 0.016863376}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -437,7 +437,7 @@ MonoBehaviour:
     SplineCurvature: 0.5
   RecenteringTarget: 2
   HorizontalAxis:
-    Value: 4.0723457
+    Value: 0
     Center: 0
     Range: {x: -180, y: 180}
     Wrap: 1
@@ -447,7 +447,7 @@ MonoBehaviour:
       Time: 2
     Restrictions: 0
   VerticalAxis:
-    Value: -1.3377236
+    Value: 30
     Center: 17.5
     Range: {x: -10, y: 45}
     Wrap: 0
@@ -644,6 +644,10 @@ PrefabInstance:
       propertyPath: m_targetGroup
       value: 
       objectReference: {fileID: 1222060543953445179}
+    - target: {fileID: 1723142119567756347, guid: b2a67e2311d0d4d2fa14e1a2b64e2eca, type: 3}
+      propertyPath: m_cineTargetGroup
+      value: 
+      objectReference: {fileID: 1222060543953445179}
     - target: {fileID: 5278935766977295100, guid: b2a67e2311d0d4d2fa14e1a2b64e2eca, type: 3}
       propertyPath: m_Name
       value: Player
@@ -651,6 +655,30 @@ PrefabInstance:
     - target: {fileID: 7307285823971467582, guid: b2a67e2311d0d4d2fa14e1a2b64e2eca, type: 3}
       propertyPath: <Attacks>k__BackingField.Array.size
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7307285823971467582, guid: b2a67e2311d0d4d2fa14e1a2b64e2eca, type: 3}
+      propertyPath: <Attacks>k__BackingField.Array.data[0].<Force>k__BackingField
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7307285823971467582, guid: b2a67e2311d0d4d2fa14e1a2b64e2eca, type: 3}
+      propertyPath: <Attacks>k__BackingField.Array.data[1].<Force>k__BackingField
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7307285823971467582, guid: b2a67e2311d0d4d2fa14e1a2b64e2eca, type: 3}
+      propertyPath: <Attacks>k__BackingField.Array.data[2].<Force>k__BackingField
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7307285823971467582, guid: b2a67e2311d0d4d2fa14e1a2b64e2eca, type: 3}
+      propertyPath: <Attacks>k__BackingField.Array.data[0].<ForceTime>k__BackingField
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 7307285823971467582, guid: b2a67e2311d0d4d2fa14e1a2b64e2eca, type: 3}
+      propertyPath: <Attacks>k__BackingField.Array.data[1].<ForceTime>k__BackingField
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 7307285823971467582, guid: b2a67e2311d0d4d2fa14e1a2b64e2eca, type: 3}
+      propertyPath: <Attacks>k__BackingField.Array.data[2].<ForceTime>k__BackingField
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 7307285823971467582, guid: b2a67e2311d0d4d2fa14e1a2b64e2eca, type: 3}
       propertyPath: <Attacks>k__BackingField.Array.data[0].<AnimationName>k__BackingField
@@ -695,6 +723,14 @@ PrefabInstance:
     - target: {fileID: 7307285823971467582, guid: b2a67e2311d0d4d2fa14e1a2b64e2eca, type: 3}
       propertyPath: <Attacks>k__BackingField.Array.data[2].<TransitionDuration>k__BackingField
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7322494399240832751, guid: b2a67e2311d0d4d2fa14e1a2b64e2eca, type: 3}
+      propertyPath: m_drag
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8673123951556768415, guid: b2a67e2311d0d4d2fa14e1a2b64e2eca, type: 3}
+      propertyPath: m_Radius
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

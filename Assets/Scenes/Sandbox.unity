@@ -872,8 +872,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1126288642}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.12218327, y: 0.000000030489364, z: -0.000000003753413, w: 0.9925076}
-  m_LocalPosition: {x: 0.00000037925412, y: 6.441399, z: -5.82715}
+  m_LocalRotation: {x: 0.18337251, y: -4.2912353e-17, z: 8.004677e-18, w: 0.9830435}
+  m_LocalPosition: {x: 0.00000037925412, y: 7.1822157, z: -5.6245637}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1462,17 +1462,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7910338781306211242, guid: d155f6ce7468dab479e9f13ed68cd679, type: 3}
   m_PrefabInstance: {fileID: 1463534769}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1774872813 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1222060543953445179, guid: edcb69e217a9b4952a4103438d345e79, type: 3}
-  m_PrefabInstance: {fileID: 4870025309652286039}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5eb80d8e62d9d145bb50fb783c0f731, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1847395011
 GameObject:
   m_ObjectHideFlags: 0
@@ -1771,10 +1760,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerRig
       objectReference: {fileID: 0}
-    - target: {fileID: 2272526584245055287, guid: edcb69e217a9b4952a4103438d345e79, type: 3}
-      propertyPath: m_cineTargetGroup
-      value: 
-      objectReference: {fileID: 1774872813}
     - target: {fileID: 5660121067687329627, guid: edcb69e217a9b4952a4103438d345e79, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1814,10 +1799,6 @@ PrefabInstance:
     - target: {fileID: 5660121067687329627, guid: edcb69e217a9b4952a4103438d345e79, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8087715114220671379, guid: edcb69e217a9b4952a4103438d345e79, type: 3}
-      propertyPath: m_Radius
-      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

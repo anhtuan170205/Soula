@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerAttackState : PlayerBaseState
 {
     private float m_previousFrameTime;
+    private bool m_hasAppliedForce;
     private Attack m_attack;
     public PlayerAttackState(PlayerStateMachine stateMachine, int attackIndex) : base(stateMachine)
     {
@@ -17,11 +18,15 @@ public class PlayerAttackState : PlayerBaseState
     {
         Move(deltaTime);
         FaceTarget();
-        
+
         float normalizedTime = GetNormalizedTime();
 
-        if (normalizedTime > m_previousFrameTime && normalizedTime < 1f)
+        if (normalizedTime >= m_previousFrameTime && normalizedTime < 1f)
         {
+            if (normalizedTime >= m_attack.ForceTime)
+            {
+                TryApplyForce();
+            }
             if (m_stateMachine.InputReader.IsAttacking)
             {
                 TryComboAttack(normalizedTime);
@@ -29,7 +34,14 @@ public class PlayerAttackState : PlayerBaseState
         }
         else
         {
-
+            if (m_stateMachine.Targeter.CurrentTarget != null)
+            {
+                m_stateMachine.SwitchState(new PlayerTargetState(m_stateMachine));
+            }
+            else
+            {
+                m_stateMachine.SwitchState(new PlayerFreeLookState(m_stateMachine));
+            }
         }
 
         m_previousFrameTime = normalizedTime;
@@ -62,5 +74,12 @@ public class PlayerAttackState : PlayerBaseState
         if (normalizedTime < m_attack.ComboAttackTime) { return; }
 
         m_stateMachine.SwitchState(new PlayerAttackState(m_stateMachine, m_attack.ComboStateIndex));
+    }
+
+    private void TryApplyForce()
+    {
+        if (m_hasAppliedForce) { return; }
+        m_hasAppliedForce = true;
+        m_stateMachine.ForceReceiver.AddForce(m_stateMachine.transform.forward * m_attack.Force);
     }
 }
