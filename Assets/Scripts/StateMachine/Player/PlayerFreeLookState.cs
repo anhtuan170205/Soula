@@ -14,7 +14,6 @@ public class PlayerFreeLookState : PlayerBaseState
         m_stateMachine.Animator.CrossFadeInFixedTime(FREE_LOOK_BLEND_TREE_HASH, CROSS_FADE_DURATION);
     }
 
-
     public override void Tick(float deltaTime)
     {
         if (m_stateMachine.InputReader.IsAttacking)
