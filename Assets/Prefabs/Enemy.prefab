@@ -1341,6 +1341,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5825259235797421048}
+  - component: {fileID: 2655782133765606419}
   - component: {fileID: 1466490196843408395}
   - component: {fileID: 1942535168094615142}
   - component: {fileID: 1260810508418439264}
@@ -1373,6 +1374,28 @@ Transform:
   - {fileID: 6042444363170067162}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!195 &2655782133765606419
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3963060013607964886}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.35
+  m_Speed: 1
+  m_Acceleration: 0
+  avoidancePriority: 50
+  m_AngularSpeed: 0
+  m_StoppingDistance: 1
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!143 &1466490196843408395
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1435,7 +1458,9 @@ MonoBehaviour:
   <Animator>k__BackingField: {fileID: 1942535168094615142}
   <Controller>k__BackingField: {fileID: 1466490196843408395}
   <ForceReceiver>k__BackingField: {fileID: 882483494452898609}
+  <Agent>k__BackingField: {fileID: 2655782133765606419}
   <ChaseRange>k__BackingField: 10
+  <MoveSpeed>k__BackingField: 0
 --- !u!114 &6203281435769225487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1473,7 +1498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6b496b31928a45ee83d1007013efc06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_controller: {fileID: 0}
+  m_controller: {fileID: 1466490196843408395}
   m_drag: 0.3
 --- !u!1 &4315140866388868699
 GameObject:
