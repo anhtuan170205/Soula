@@ -489,6 +489,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7910338781306211242, guid: d155f6ce7468dab479e9f13ed68cd679, type: 3}
   m_PrefabInstance: {fileID: 174495328}
   m_PrefabAsset: {fileID: 0}
+--- !u!143 &245610897 stripped
+CharacterController:
+  m_CorrespondingSourceObject: {fileID: 1466490196843408395, guid: 8391457dab21146fd86e8f6c5dc6efba, type: 3}
+  m_PrefabInstance: {fileID: 1941212210818724401}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &251403323
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2985,6 +2990,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 882483494452898609, guid: 8391457dab21146fd86e8f6c5dc6efba, type: 3}
+      propertyPath: m_controller
+      value: 
+      objectReference: {fileID: 245610897}
     - target: {fileID: 3963060013607964886, guid: 8391457dab21146fd86e8f6c5dc6efba, type: 3}
       propertyPath: m_Name
       value: Enemy
