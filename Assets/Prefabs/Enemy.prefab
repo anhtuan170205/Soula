@@ -1460,7 +1460,8 @@ MonoBehaviour:
   <ForceReceiver>k__BackingField: {fileID: 882483494452898609}
   <Agent>k__BackingField: {fileID: 2655782133765606419}
   <ChaseRange>k__BackingField: 10
-  <MoveSpeed>k__BackingField: 0
+  <MoveSpeed>k__BackingField: 3
+  <AttackRange>k__BackingField: 1.5
 --- !u!114 &6203281435769225487
 MonoBehaviour:
   m_ObjectHideFlags: 0

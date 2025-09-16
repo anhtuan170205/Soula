@@ -9,6 +9,7 @@ public class EnemyStateMachine : StateMachine
     [field: SerializeField] public NavMeshAgent Agent { get; private set; }
     [field: SerializeField] public float ChaseRange { get; private set; }
     [field: SerializeField] public float MoveSpeed { get; private set; }
+    [field: SerializeField] public float AttackRange { get; private set; }
 
     public GameObject Player { get; private set; }
 
