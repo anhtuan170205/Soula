@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class WeaponDamage : MonoBehaviour
 {
-    [SerializeField] private Collider m_playerCollider;
+    [SerializeField] private Collider m_bearerCollider;
     private List<Collider> m_collidedColliders = new List<Collider>();
     private int m_attackDamage = 10;
 
@@ -14,7 +14,7 @@ public class WeaponDamage : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other == m_playerCollider) { return; }
+        if (other == m_bearerCollider) { return; }
         if (m_collidedColliders.Contains(other)) { return; }
 
         m_collidedColliders.Add(other);

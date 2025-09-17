@@ -20,6 +20,7 @@ public class EnemyIdleState : EnemyBaseState
         {
             m_stateMachine.SwitchState(new EnemyChaseState(m_stateMachine));
         }
+        FacePlayer();
         m_stateMachine.Animator.SetFloat(SPEED_HASH, 0, ANIMATOR_DAMP_TIME, deltaTime);
     }
 

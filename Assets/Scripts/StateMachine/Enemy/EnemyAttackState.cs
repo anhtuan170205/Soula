@@ -9,16 +9,17 @@ public class EnemyAttackState : EnemyBaseState
 
     public override void Enter()
     {
+        m_stateMachine.WeaponDamage.SetAttackDamage(m_stateMachine.AttackDamage);
         m_stateMachine.Animator.CrossFadeInFixedTime(ATTACK_HASH, CROSS_FADE_DURATION);
     }
 
     public override void Tick(float deltaTime)
     {
-        throw new System.NotImplementedException();
+
     }
 
     public override void Exit()
     {
-        throw new System.NotImplementedException();
+
     }
 }
