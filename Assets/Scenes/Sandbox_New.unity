@@ -2041,6 +2041,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3963060013607964886, guid: 8391457dab21146fd86e8f6c5dc6efba, type: 3}
   m_PrefabInstance: {fileID: 1941212210818724401}
   m_PrefabAsset: {fileID: 0}
+--- !u!195 &1458177749 stripped
+NavMeshAgent:
+  m_CorrespondingSourceObject: {fileID: 2655782133765606419, guid: 8391457dab21146fd86e8f6c5dc6efba, type: 3}
+  m_PrefabInstance: {fileID: 1941212210818724401}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1458177751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3054,6 +3059,18 @@ PrefabInstance:
       propertyPath: <Attacks>k__BackingField.Array.data[2].<Damage>k__BackingField
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 7856749445172838962, guid: edcb69e217a9b4952a4103438d345e79, type: 3}
+      propertyPath: <Attacks>k__BackingField.Array.data[0].<Knockback>k__BackingField
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7856749445172838962, guid: edcb69e217a9b4952a4103438d345e79, type: 3}
+      propertyPath: <Attacks>k__BackingField.Array.data[1].<Knockback>k__BackingField
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7856749445172838962, guid: edcb69e217a9b4952a4103438d345e79, type: 3}
+      propertyPath: <Attacks>k__BackingField.Array.data[2].<Knockback>k__BackingField
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 7888856558665691001, guid: edcb69e217a9b4952a4103438d345e79, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 11.442419
@@ -3551,6 +3568,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -6.0026855
       objectReference: {fileID: 0}
+    - target: {fileID: 882483494452898609, guid: 8391457dab21146fd86e8f6c5dc6efba, type: 3}
+      propertyPath: m_agent
+      value: 
+      objectReference: {fileID: 1458177749}
     - target: {fileID: 988109922132290454, guid: 8391457dab21146fd86e8f6c5dc6efba, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 19.302103

@@ -30,12 +30,14 @@ public class EnemyChaseState : EnemyBaseState
 
     public override void Exit()
     {
+        if (!m_stateMachine.Agent.isActiveAndEnabled || !m_stateMachine.Agent.isOnNavMesh) { return; }
         m_stateMachine.Agent.ResetPath();
         m_stateMachine.Agent.velocity = Vector3.zero;
     }
 
     private void MoveToPlayer(float deltaTime)
     {
+        if (!m_stateMachine.Agent.isActiveAndEnabled || !m_stateMachine.Agent.isOnNavMesh) { return; }
         m_stateMachine.Agent.destination = m_stateMachine.Player.transform.position;
         Move(m_stateMachine.Agent.desiredVelocity.normalized * m_stateMachine.MoveSpeed, deltaTime);
         m_stateMachine.Agent.velocity = m_stateMachine.Controller.velocity;

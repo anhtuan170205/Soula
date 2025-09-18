@@ -5,7 +5,8 @@ public class WeaponDamage : MonoBehaviour
 {
     [SerializeField] private Collider m_bearerCollider;
     private List<Collider> m_collidedColliders = new List<Collider>();
-    private int m_attackDamage = 10;
+    private int m_attackDamage;
+    private float m_knockback;
 
     private void OnEnable()
     {
@@ -22,10 +23,16 @@ public class WeaponDamage : MonoBehaviour
         {
             health.DealDamage(m_attackDamage);
         }
+        if (other.TryGetComponent<ForceReceiver>(out ForceReceiver forceReceiver))
+        {
+            Vector3 direction = (other.transform.position - m_bearerCollider.transform.position).normalized;
+            forceReceiver.AddForce(direction * m_knockback);
+        }
     }
 
-    public void SetAttackDamage(int damage)
+    public void SetAttackDamage(int damage, float knockback)
     {
         m_attackDamage = damage;
+        m_knockback = knockback;
     }
 }
