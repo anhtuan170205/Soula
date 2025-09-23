@@ -20,6 +20,11 @@ public abstract class EnemyBaseState : State
         m_stateMachine.Controller.Move((motion + m_stateMachine.ForceReceiver.Movement) * deltaTime);
     }
 
+    protected void Move(float deltaTime)
+    {
+        Move(Vector3.zero, deltaTime);
+    }
+
     protected void FacePlayer()
     {
         if (m_stateMachine.Player == null) { return; }
@@ -28,11 +33,6 @@ public abstract class EnemyBaseState : State
         lookDirection.y = 0;
 
         m_stateMachine.transform.rotation = Quaternion.LookRotation(lookDirection);
-    }
-
-    protected void Move(float deltaTime)
-    {
-        Move(Vector3.zero, deltaTime);
     }
 
 }

@@ -18,10 +18,12 @@ public class EnemyChaseState : EnemyBaseState
         if (!IsInChaseRange())
         {
             m_stateMachine.SwitchState(new EnemyIdleState(m_stateMachine));
+            return;
         }
         else if (IsInAttackRange())
         {
             m_stateMachine.SwitchState(new EnemyAttackState(m_stateMachine));
+            return;
         }
         MoveToPlayer(deltaTime);
         FacePlayer();

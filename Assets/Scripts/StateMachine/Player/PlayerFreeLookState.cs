@@ -21,6 +21,10 @@ public class PlayerFreeLookState : PlayerBaseState
             m_stateMachine.SwitchState(new PlayerAttackState(m_stateMachine, 0));
             return;
         }
+
+        Vector3 movement = CalculateMovement();
+        Move(movement * m_stateMachine.FreeLookMoveSpeed, deltaTime);
+        
         if (m_stateMachine.InputReader.MovementValue == Vector2.zero)
         {
             m_stateMachine.Animator.SetFloat(FREE_LOOK_SPEED_HASH, 0, ANIMATOR_DAMP_TIME, deltaTime);
@@ -28,9 +32,7 @@ public class PlayerFreeLookState : PlayerBaseState
         }
 
         m_stateMachine.Animator.SetFloat(FREE_LOOK_SPEED_HASH, 1, ANIMATOR_DAMP_TIME, deltaTime);
-        Vector3 movement = CalculateMovement();
 
-        Move(movement * m_stateMachine.FreeLookMoveSpeed, deltaTime);
         FaceMovementDirection(movement, deltaTime);
     }
 
