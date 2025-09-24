@@ -6,6 +6,7 @@ public class PlayerDeadState : PlayerBaseState
 
     public override void Enter()
     {
+        m_stateMachine.Ragdoll.ToggleRadoll(true);
         m_stateMachine.WeaponDamage.gameObject.SetActive(false);
     }
 
