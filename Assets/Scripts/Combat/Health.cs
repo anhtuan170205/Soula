@@ -7,6 +7,7 @@ public class Health : MonoBehaviour
     private int m_health;
 
     public event Action OnTakeDamage;
+    public event Action OnDie;
 
     private void Start()
     {
@@ -18,6 +19,10 @@ public class Health : MonoBehaviour
         if (m_health <= 0) { return; }
         m_health = Mathf.Max(m_health - damage, 0);
         OnTakeDamage?.Invoke();
-        Debug.Log($"{gameObject.name} took {damage} damage. Current health: {m_health}");
+        
+        if (m_health == 0)
+        {
+            OnDie?.Invoke();
+        }
     }
 }
