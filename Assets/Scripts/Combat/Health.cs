@@ -6,6 +6,7 @@ public class Health : MonoBehaviour
     [SerializeField] private int m_maxHealth = 100;
     private int m_health;
     private bool m_isVulnerable = true;
+    public bool IsDead => m_health == 0;
 
     public event Action OnTakeDamage;
     public event Action OnDie;
@@ -26,6 +27,7 @@ public class Health : MonoBehaviour
         if (!m_isVulnerable) { return; }
 
         m_health = Mathf.Max(m_health - damage, 0);
+        Debug.Log($"Health: {m_health}/{m_maxHealth} of {gameObject.name}");
         OnTakeDamage?.Invoke();
 
         if (m_health == 0)

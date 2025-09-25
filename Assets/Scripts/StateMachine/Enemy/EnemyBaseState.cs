@@ -9,12 +9,6 @@ public abstract class EnemyBaseState : State
         this.m_stateMachine = stateMachine;
     }
 
-    protected bool IsInChaseRange()
-    {
-        float distanceToPlayer = Vector3.Distance(m_stateMachine.Player.transform.position, m_stateMachine.transform.position);
-        return distanceToPlayer <= m_stateMachine.ChaseRange;
-    }
-
     protected void Move(Vector3 motion, float deltaTime)
     {
         m_stateMachine.Controller.Move((motion + m_stateMachine.ForceReceiver.Movement) * deltaTime);
@@ -35,4 +29,10 @@ public abstract class EnemyBaseState : State
         m_stateMachine.transform.rotation = Quaternion.LookRotation(lookDirection);
     }
 
+    protected bool IsInChaseRange()
+    {
+        if (m_stateMachine.Player.IsDead) { return false; }
+        float distanceToPlayer = Vector3.Distance(m_stateMachine.Player.transform.position, m_stateMachine.transform.position);
+        return distanceToPlayer <= m_stateMachine.ChaseRange;
+    }
 }

@@ -1572,8 +1572,8 @@ MonoBehaviour:
     Enabled: 0
     DefaultMode: 2
   DefaultBlend:
-    Style: 1
-    Time: 2
+    Style: 2
+    Time: 0.25
     CustomCurve:
       serializedVersion: 2
       m_Curve: []
@@ -2529,6 +2529,10 @@ PrefabInstance:
       propertyPath: <Ragdoll>k__BackingField
       value: 
       objectReference: {fileID: 150168857}
+    - target: {fileID: 9042295164633042338, guid: edcb69e217a9b4952a4103438d345e79, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

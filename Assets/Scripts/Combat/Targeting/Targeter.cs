@@ -37,6 +37,7 @@ public class Targeter : MonoBehaviour
         foreach (Target target in m_targets)
         {
             Vector2 viewPosition = m_mainCamera.WorldToViewportPoint(target.transform.position);
+            
             if (viewPosition.x < 0 || viewPosition.x > 1 || viewPosition.y < 0 || viewPosition.y > 1) { continue; }
 
             Vector2 toCenter = viewPosition - new Vector2(0.5f, 0.5f);

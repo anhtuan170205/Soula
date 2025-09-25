@@ -19,6 +19,7 @@ public class EnemyAttackState : EnemyBaseState
         {
             m_stateMachine.SwitchState(new EnemyChaseState(m_stateMachine));
         }
+        FacePlayer();
     }
 
     public override void Exit()
