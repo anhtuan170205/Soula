@@ -1979,6 +1979,7 @@ GameObject:
   - component: {fileID: 7520803440718041023}
   - component: {fileID: 882483494452898609}
   - component: {fileID: 4116338441476044759}
+  - component: {fileID: 5378371718411845302}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -2092,7 +2093,8 @@ MonoBehaviour:
   <Agent>k__BackingField: {fileID: 2655782133765606419}
   <WeaponDamage>k__BackingField: {fileID: 2959009263792028913}
   <Health>k__BackingField: {fileID: 7520803440718041023}
-  <Target>k__BackingField: {fileID: 0}
+  <Target>k__BackingField: {fileID: 6203281435769225487}
+  <Ragdoll>k__BackingField: {fileID: 5378371718411845302}
   <ChaseRange>k__BackingField: 10
   <MoveSpeed>k__BackingField: 3
   <AttackRange>k__BackingField: 1.5
@@ -2137,7 +2139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_controller: {fileID: 1466490196843408395}
   m_agent: {fileID: 2655782133765606419}
-  m_drag: 0.2
+  m_drag: 0.1
 --- !u!114 &4116338441476044759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2151,6 +2153,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_weaponLogic: {fileID: 3392889679967344049}
+--- !u!114 &5378371718411845302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3963060013607964886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c88142320e74b4a1a9f24d16a2d86060, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_animator: {fileID: 1942535168094615142}
+  m_controller: {fileID: 1466490196843408395}
 --- !u!1 &4315140866388868699
 GameObject:
   m_ObjectHideFlags: 0

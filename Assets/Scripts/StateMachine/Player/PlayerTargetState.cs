@@ -23,6 +23,11 @@ public class PlayerTargetState : PlayerBaseState
             m_stateMachine.SwitchState(new PlayerAttackState(m_stateMachine, 0));
             return;
         }
+        if (m_stateMachine.InputReader.IsBlocking)
+        {
+            m_stateMachine.SwitchState(new PlayerBlockState(m_stateMachine));
+            return;
+        }
         if (m_stateMachine.Targeter.CurrentTarget == null)
         {
             m_stateMachine.SwitchState(new PlayerFreeLookState(m_stateMachine));
