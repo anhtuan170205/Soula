@@ -13,6 +13,8 @@ public class PlayerTargetState : PlayerBaseState
     public override void Enter()
     {
         m_stateMachine.InputReader.CancelEvent += OnCancel;
+        m_stateMachine.InputReader.DodgeEvent += OnDodge;
+
         m_stateMachine.Animator.CrossFadeInFixedTime(TARGET_BLEND_TREE_HASH, CROSS_FADE_DURATION);
     }
 
@@ -43,6 +45,7 @@ public class PlayerTargetState : PlayerBaseState
     public override void Exit()
     {
         m_stateMachine.InputReader.CancelEvent -= OnCancel;
+        m_stateMachine.InputReader.DodgeEvent -= OnDodge;
     }
 
     private void OnCancel()
@@ -75,7 +78,11 @@ public class PlayerTargetState : PlayerBaseState
     public void UpdateAnimator(float deltaTime)
     {
         UpdateAnimatorValue(TARGET_FORWARD_HASH, m_stateMachine.InputReader.MovementValue.y, ANIMATOR_DAMP_TIME, deltaTime);
-        UpdateAnimatorValue(TARGET_RIGHT_HASH,   m_stateMachine.InputReader.MovementValue.x, ANIMATOR_DAMP_TIME, deltaTime);
+        UpdateAnimatorValue(TARGET_RIGHT_HASH, m_stateMachine.InputReader.MovementValue.x, ANIMATOR_DAMP_TIME, deltaTime);
     }
 
+    private void OnDodge()
+    {
+        m_stateMachine.SwitchState(new PlayerDodgeState(m_stateMachine));
+    }
 }
