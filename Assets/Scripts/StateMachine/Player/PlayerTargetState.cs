@@ -14,6 +14,7 @@ public class PlayerTargetState : PlayerBaseState
     {
         m_stateMachine.InputReader.CancelEvent += OnCancel;
         m_stateMachine.InputReader.DodgeEvent += OnDodge;
+        m_stateMachine.InputReader.JumpEvent += OnJump;
 
         m_stateMachine.Animator.CrossFadeInFixedTime(TARGET_BLEND_TREE_HASH, CROSS_FADE_DURATION);
     }
@@ -46,12 +47,18 @@ public class PlayerTargetState : PlayerBaseState
     {
         m_stateMachine.InputReader.CancelEvent -= OnCancel;
         m_stateMachine.InputReader.DodgeEvent -= OnDodge;
+        m_stateMachine.InputReader.JumpEvent -= OnJump;
     }
 
     private void OnCancel()
     {
         m_stateMachine.Targeter.Cancel();
         m_stateMachine.SwitchState(new PlayerFreeLookState(m_stateMachine));
+    }
+
+    private void OnJump()
+    {
+        m_stateMachine.SwitchState(new PlayerJumpState(m_stateMachine));
     }
 
     private Vector3 CalculateMovement()

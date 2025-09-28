@@ -46,14 +46,8 @@ public class PlayerDodgeState : PlayerBaseState
 
         if (m_dodgeTime <= 0f)
         {
-            if (m_stateMachine.Targeter.CurrentTarget != null)
-            {
-                m_stateMachine.SwitchState(new PlayerTargetState(m_stateMachine));
-            }
-            else
-            {
-                m_stateMachine.SwitchState(new PlayerFreeLookState(m_stateMachine));
-            }
+            ReturnToLocomotion();
+            return;
         }
 
         Move(m_dodgeDirection * DODGE_SPEED, deltaTime);
