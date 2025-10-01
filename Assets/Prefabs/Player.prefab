@@ -1088,6 +1088,7 @@ GameObject:
   - component: {fileID: 8742358600450022514}
   - component: {fileID: 2308082575856701862}
   - component: {fileID: 3267712583063955220}
+  - component: {fileID: 2799378411687909393}
   m_Layer: 8
   m_Name: LedgeDetector
   m_TagString: Untagged
@@ -1158,6 +1159,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2799378411687909393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2918745604035584948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07cdb8469650f45a5bdb20be89989b65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2969006364859462715
 GameObject:
   m_ObjectHideFlags: 0

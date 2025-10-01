@@ -13,6 +13,7 @@ public class PlayerFallState : PlayerBaseState
         m_stateMachine.Animator.CrossFadeInFixedTime(FALL_HASH, CROSS_FADE_DURATION);
         m_momentum = m_stateMachine.Controller.velocity;
         m_momentum.y = 0f;
+        m_stateMachine.LedgeDetector.OnLedgeDetected += HandleLedgeDetect;
     }
 
     public override void Tick(float deltaTime)
@@ -27,6 +28,11 @@ public class PlayerFallState : PlayerBaseState
 
     public override void Exit()
     {
-
+        m_stateMachine.LedgeDetector.OnLedgeDetected -= HandleLedgeDetect;
+    }
+    
+    private void HandleLedgeDetect(Vector3 ledgeForward)
+    {
+        m_stateMachine.SwitchState(new PlayerHangState(m_stateMachine, ledgeForward));
     }
 }
