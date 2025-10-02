@@ -12,7 +12,7 @@ public class PlayerTargetState : PlayerBaseState
 
     public override void Enter()
     {
-        m_stateMachine.InputReader.CancelEvent += OnCancel;
+        m_stateMachine.InputReader.TargetEvent += OnTarget;
         m_stateMachine.InputReader.DodgeEvent += OnDodge;
         m_stateMachine.InputReader.JumpEvent += OnJump;
 
@@ -45,12 +45,12 @@ public class PlayerTargetState : PlayerBaseState
 
     public override void Exit()
     {
-        m_stateMachine.InputReader.CancelEvent -= OnCancel;
+        m_stateMachine.InputReader.TargetEvent -= OnTarget;
         m_stateMachine.InputReader.DodgeEvent -= OnDodge;
         m_stateMachine.InputReader.JumpEvent -= OnJump;
     }
 
-    private void OnCancel()
+    private void OnTarget()
     {
         m_stateMachine.Targeter.Cancel();
         m_stateMachine.SwitchState(new PlayerFreeLookState(m_stateMachine));

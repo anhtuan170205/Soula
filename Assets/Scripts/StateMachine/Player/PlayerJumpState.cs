@@ -13,6 +13,7 @@ public class PlayerJumpState : PlayerBaseState
         m_stateMachine.Animator.CrossFadeInFixedTime(JUMP_HASH, CROSS_FADE_DURATION);
         m_momentum = m_stateMachine.Controller.velocity;
         m_momentum.y = 0f;
+        m_stateMachine.LedgeDetector.OnLedgeDetected += HandleLedgeDetect;
     }
 
     public override void Tick(float deltaTime)
@@ -28,6 +29,11 @@ public class PlayerJumpState : PlayerBaseState
 
     public override void Exit()
     {
+        m_stateMachine.LedgeDetector.OnLedgeDetected -= HandleLedgeDetect;
+    }
 
+    private void HandleLedgeDetect(Vector3 ledgeForward, Vector3 closestPoint)
+    {
+        m_stateMachine.SwitchState(new PlayerHangState(m_stateMachine, ledgeForward, closestPoint));
     }
 }

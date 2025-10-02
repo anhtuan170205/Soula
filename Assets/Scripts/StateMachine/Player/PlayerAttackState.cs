@@ -20,7 +20,7 @@ public class PlayerAttackState : PlayerBaseState
         Move(deltaTime);
         FaceTarget();
 
-        float normalizedTime = GetNormalizedTime(m_stateMachine.Animator);
+        float normalizedTime = GetNormalizedTime(m_stateMachine.Animator, "Attack");
 
         if (normalizedTime >= m_previousFrameTime && normalizedTime < 1f)
         {
@@ -52,8 +52,6 @@ public class PlayerAttackState : PlayerBaseState
     {
 
     }
-
-
 
     private void TryComboAttack(float normalizedTime)
     {
